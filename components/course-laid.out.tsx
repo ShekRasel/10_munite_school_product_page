@@ -29,26 +29,17 @@ export const CourseLaidOut: FC<LaidOutProps> = ({ laidout }) => {
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="bg-gray-800 rounded-md p-2 lg:p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-300 space-y-3"
+              className="bg-gray-800 rounded-md p-2 py-4 lg:p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-300 space-y-3"
             >
               <div className="flex justify-center mb-4">
-                <div className="w-14 h-14 relative">
-                  <Image
-                    src={feature.icon}
-                    alt={feature.title}
-                    fill
-                    className="object-contain"
-                  />
+                <div className="h-12 w-12 relative">
+                  <Image src={feature.icon} alt={feature.title} fill />
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold ">
-                {feature.title}
-              </h3>
+              <h3 className="text-lg font-semibold ">{feature.title}</h3>
 
-              <p className="text-sm leading-relaxed">
-                {feature.subtitle}
-              </p>
+              <p className="text-sm leading-relaxed">{feature.subtitle}</p>
             </div>
           ))}
         </div>
