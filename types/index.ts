@@ -36,9 +36,8 @@ export interface Seo {
 }
 
 export interface CtaText {
-  title: string;
-  description: string;
-  button_text: string;
+  name: string;
+  value: string;
 }
 
 export interface Section<T> {

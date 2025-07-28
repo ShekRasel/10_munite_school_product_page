@@ -10,7 +10,7 @@ export const PrimaryButton: FC<Props> = ({
 }): JSX.Element => {
   return (
     <button
-      className={`${className} bg-green-600 rounded-md w-full px-4 py-2 cursor-pointer`}
+      className={`${className} bg-green-600 rounded-md px-4 py-2 cursor-pointer`}
     >
       {children}
     </button>

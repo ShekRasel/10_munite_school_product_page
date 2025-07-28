@@ -1,6 +1,6 @@
 "use client";
 
-import { ChecklistItem, MediaItem } from "@/types";
+import { ChecklistItem, CtaText, MediaItem } from "@/types";
 import React, { FC, JSX, useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { PrimaryButton } from "./button/primary.buttton";
@@ -9,11 +9,13 @@ import { useScrollPosition } from "@/hooks/use-scroll.position";
 interface Props {
   media?: MediaItem[];
   checklist?: ChecklistItem[];
+  cta_text?: CtaText;
 }
 
 export const TrailerSection: FC<Props> = ({
   media = [],
   checklist,
+  cta_text,
 }): JSX.Element => {
   const scrollValue = useScrollPosition();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -146,7 +148,9 @@ export const TrailerSection: FC<Props> = ({
       {/* desktop */}
       <div>
         <h1 className="py-2 text-xl font-semibold text-green-500">৳ 1000</h1>
-        <PrimaryButton className="font-semibold">Enroll</PrimaryButton>
+        <PrimaryButton className="font-semibold w-full">
+          {cta_text?.name}
+        </PrimaryButton>
       </div>
 
       {/* mobile */}
@@ -154,7 +158,7 @@ export const TrailerSection: FC<Props> = ({
         <div className="fixed bottom-0 left-0 w-full z-50 shadow md:hidden bg-gray-800 px-4 py-4">
           <h1 className="text-xl font-semibold text-green-500">৳ 1000</h1>
           <PrimaryButton className="w-full font-semibold mt-2">
-            Enroll
+            {cta_text?.name}
           </PrimaryButton>
         </div>
       )}

@@ -25,13 +25,13 @@ export const LearningPoint: FC<Props> = ({ learningPoint }) => {
           {learningPoint.name}
         </h2>
 
-        <ul className="">
-          {pointerItem.map((item, index) => (
-            <li key={item.id} className="flex gap-4">
-              <div className="mt-1 text-xl text-primary">
-                <GoArrowRight />
-              </div>
-              <p className="text-justify">{item.text}</p>
+        <ul className="flex flex-col gap-2 lg:gap-4">
+          {pointerItem.map((item) => (
+            <li key={item.id} className="flex gap-4 items-center">
+              <span>
+                <GoArrowRight size={14} />
+              </span>
+              <p className="text-justify gap-2">{item.text}</p>
             </li>
           ))}
         </ul>
